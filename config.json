@@ -1,28 +1,28 @@
 {
-  "name": "exploration_addon",
-  "author": "SirLich",
-  "packs": {
-    "behaviorPack": "./packs/BP",
-    "resourcePack": "./packs/RP"
-  },
-  "regolith": {
-    "profiles": {
-      "dev": {
-        "unsafe": false,
-        "filters": [
-          {
-            "filter": "kra_convert"
-          },
-          {
-            "runWith": "python",
-            "script": "./filters/echo/echo_npc.py"
-          }
-        ],
-        "export": {
-          "target": "development"
-        },
-        "dataPath": "./packs/data"
-      }
+    "name": "exploration_addon",
+    "author": "SirLich",
+    "packs": {
+        "behaviorPack": "./packs/BP",
+        "resourcePack": "./packs/RP"
+    },
+    "regolith": {
+        "profiles": {
+            "dev": {
+                "unsafe": false,
+                "filters": [
+                    {
+                        "filter": "kra_convert"
+                    },
+                    {
+                        "runWith": "python",
+                        "script": "./filters/echo/echo_npc.py"
+                    }
+                ],
+                "export": {
+                    "target": "development"
+                },
+                "dataPath": "./packs/data"
+            }
+        }
     }
-  }
 }
