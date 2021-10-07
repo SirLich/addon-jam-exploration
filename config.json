@@ -14,8 +14,7 @@
                         "filter": "kra_convert"
                     },
                     {
-                        "runWith": "python",
-                        "script": "./filters/echo/echo_npc.py"
+                        "url": "github.com/SirLich/echo-npc-regolith/echo"
                     }
                 ],
                 "export": {

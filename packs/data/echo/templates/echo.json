@@ -1,0 +1,15 @@
+{
+    "header": {
+        "default_state": "main"
+    },
+    "entity": "default sirlich:echo",
+    "states": [
+        {
+            "name": "main",
+            "text": [
+                "Hello world!",
+                "I am echo!"
+            ]
+        }
+    ]
+}
