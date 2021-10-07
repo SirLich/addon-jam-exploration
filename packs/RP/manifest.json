@@ -1,0 +1,18 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "pack.description",
+    "name": "pack.name",
+    "uuid": "31c33deb-c39f-4658-8b7e-4a5b9c1e1a33",
+    "version": [1, 0, 0],
+    "min_engine_version": [ 1, 16, 200 ]
+  },
+  "modules": [
+    {
+      "description": "sirlich vanilla resource pack",
+      "type": "resources",
+      "uuid": "a891876b-59a8-46ab-9f64-a564f7c6beb1",
+      "version": [1, 0, 0]
+    }
+  ]
+}
