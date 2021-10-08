@@ -15,6 +15,12 @@
                     },
                     {
                         "url": "github.com/SirLich/echo-npc-regolith/echo"
+                    },
+                    {
+                        "filter": "languages.json"
+                    },
+                    {
+                        "filter": "texture_list"
                     }
                 ],
                 "export": {

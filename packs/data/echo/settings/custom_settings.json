@@ -1,0 +1,63 @@
+{
+    "command_templates": {
+        "say": "/playsound mob.villager.$1 @a"
+    },
+    "transition_templates": {
+        "none": {
+            "minecraft:scale": {
+                "value": 1
+            }   
+        }
+    },
+    "entity_templates": {
+        "npc": {
+            "format_version": "1.16.0",
+            "minecraft:entity": {
+                "description": {
+                    "identifier": "$1",
+                    "is_spawnable": true,
+                    "is_summonable": true,
+                    "is_experimental": false
+                },
+                "components": {
+                    "minecraft:nameable": {
+                        "always_show": true,
+                        "allow_name_tag_renaming": false
+                    },                    
+                    "minecraft:damage_sensor": {
+                        "triggers": {
+                            "on_damage": {
+                                "filters": {}
+                            },
+                            "deals_damage": false
+                        }
+                    },
+                    "minecraft:behavior.look_at_player": {
+                        "priority": 9
+                    },
+                    "minecraft:behavior.random_look_around": {
+                        "priority": 8
+                    },
+                    "minecraft:scale": {
+                        "value": "$2{1}"
+                    },
+                    "minecraft:collision_box": {
+                        "width": 1,
+                        "height": 2
+                    },
+                    "minecraft:push_through": {
+                        "value": 1
+                    },
+                    "minecraft:health": {
+                        "value": 15,
+                        "max": 15
+                    },
+                    "minecraft:physics": {},
+                    "minecraft:nameable": {}
+                },
+                "component_groups": {},
+                "events": {}
+            }
+        }
+    }
+}

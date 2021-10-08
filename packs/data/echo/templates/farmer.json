@@ -1,0 +1,53 @@
+{
+    "header": {
+        "default_state": "main"
+    },
+    "entity": "npc sirlich:farmer",
+    "states": [
+        {
+            "name": "main",
+            "next": "trader",
+            "commands": {
+                "all": "!say idle"
+            },
+            "text": [
+                "Hello good Sir!",
+                "Why yes, I do sell Glow Berries.",
+                "I'm always ready to do business."
+            ]
+        },
+        {
+            "name": "trader",
+            "transitions": {
+                "all": "none"
+            },
+            "components": {
+                "all": {
+                    "minecraft:scale": {
+                        "value": 2
+                    },
+                    "minecraft:economy_trade_table": {
+                        "display_name": "entity.sirlich:farmer.name",
+                        "table": "trading/farmer_npc.json",
+                        "new_screen": true,
+                        "persist_trades": true
+                    }
+                }
+            }
+        },
+        {
+            "name": "loop",
+            "next": "loop",
+            "custom_components": {
+                "all": "random_wander"
+            },
+            "commands": {
+                "all": "!say idle"
+            },
+            "text": [
+                "Hello again!",
+                "Pleasure doing business with you."
+            ]
+        }
+    ]
+}

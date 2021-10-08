@@ -1,0 +1,87 @@
+{
+    "header": {
+        "default_state": "main"
+    },
+    "entity": "npc sirlich:priest",
+    "states": [
+        {
+            "name": "main",
+            "next": "wait",
+            "transitions": {
+                "1": "protected_proximity 25",
+                "2": "timer 0.6",
+                "3": "proximity 12",
+                "4": "proximity 5"
+            },
+            "commands": {
+                "1-6": "!say idle",
+                "7": [
+                    "/title @a title §bQuest Acquired",
+                    "!playsound random.levelup"
+                ]
+            },
+            "text": [
+                "Hey thee!",
+                "Come here. I have a request for ye.",
+                "A bit closer now, come on.",
+                "I could tell from afar that ye were an adventuring sort. §7§o[Hint: Click to talk]",
+                "I'm long past my adventuring days, but I've some gold saved up for a favor.",
+                "Bring me a fresh §b§oGlow Berry§r, and I will make it worth your while!",
+                "Thank you! See you soon."
+            ]
+        },
+        {
+            "name": "wait",
+            "next": "wait",
+            "commands": {
+                "all": "!say no"
+            },
+            "transitions": {
+                "all": [
+                    "interact_with_item minecraft:glow_berries echo:item_received",
+                    "interact"
+                    
+                ]
+            },
+            "text": [
+                "Do you have something for me?",
+                "I'm looking to purchase a §b§oGlow Berry§r.",
+                "Maybe one of the other villagers knows something?"
+            ]
+        },
+        {
+            "name": "item_received",
+            "next": "loop",
+            "transitions": {
+                "1": "timer 0"
+            },
+            "commands": {
+                "1": [
+                    "/title @a title §bQuest Complete",
+                    "!playsound random.levelup",
+                    "/event entity @e[type=sirlich:farmer] echo:loop"
+                ],
+                "2": "!say yes"
+            },
+            "text": [
+                "Ah, just what I was looking for.",
+                "Many thanks."
+            ]
+        },
+        {
+            "name": "loop",
+            "next": "loop",
+            "custom_components": {
+                "all": "random_wander"
+            },
+            "commands": {
+                "all": "!say idle"
+            },
+            "text": [
+                "Good day.",
+                "I don't have any more tasks for you.",
+                "Pleasant weather, isn't it?"
+            ]
+        }
+    ]
+}
