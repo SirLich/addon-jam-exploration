@@ -1,1 +1,1 @@
-teleport @s 4397 64 5253
+teleport @s 4350 68 5218

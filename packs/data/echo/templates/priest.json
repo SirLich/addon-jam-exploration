@@ -57,6 +57,7 @@
             },
             "commands": {
                 "1": [
+                    "/clear @p glow_berries -1 1",
                     "/title @a title §bQuest Complete",
                     "!playsound random.levelup",
                     "/event entity @e[type=sirlich:farmer] echo:loop"

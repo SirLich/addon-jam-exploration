@@ -21,7 +21,6 @@
                     "variable.tcos0 = (math.cos(query.modified_distance_moved * 38.17) * query.modified_move_speed / variable.gliding_speed_value) * 57.3;"
                 ],
                 "animate": [
-                    "actions",
                     "move.arms",
                     "move.legs",
                     "look_at_target_default",
@@ -29,7 +28,6 @@
                 ]
             },
             "animations": {
-                "actions": "controller.animation.knight.actions",
 				"wave": "animation.npc.steve.wave",
 				"nod": "animation.npc.steve.nod",
 				"shake": "animation.npc.steve.shake",

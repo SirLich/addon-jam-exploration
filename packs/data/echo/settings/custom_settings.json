@@ -7,6 +7,57 @@
             "minecraft:scale": {
                 "value": 1
             }   
+        },
+        "attack_player_once": {
+            "minecraft:movement": {
+                "value": 0.2
+            },
+            "minecraft:behavior.nearest_attackable_target": {
+                "priority": 0,
+                "scan_interval": 20,
+                "reselect_targets": true,
+                "target_search_height": 100,
+                "within_radius": 100,
+                "must_see": false,
+                "entity_types": [
+                    {
+                        "filters": [
+                            {
+                                "test": "is_family",
+                                "subject": "other",
+                                "value": "player"
+                            }
+                        ],
+                        "max_dist": 100
+                    }
+                ]
+            },
+            "minecraft:attack": {
+                "damage": 1
+            },
+            "minecraft:behavior.melee_attack": {
+                "priority": 2,
+                "attack_once": true,
+                "speed_multiplier": 2,
+                "on_attack": {
+                    "event": "$1{next_event}",
+                    "target": "self"
+                }
+            },
+            "minecraft:movement.basic": {},
+            "minecraft:follow_range": {
+                "value": 100,
+                "max": 100
+            },
+            "minecraft:navigation.generic": {
+                "can_path_over_water": true,
+                "avoid_water": true,
+                "can_pass_doors": true,
+                "can_walk": true,
+                "avoid_damage_blocks": true,
+                "can_open_doors": true
+            },
+            "minecraft:jump.static": {}
         }
     },
     "entity_templates": {

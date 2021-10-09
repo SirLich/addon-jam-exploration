@@ -1,0 +1,85 @@
+{
+    "header": {
+        "default_state": "p1",
+        "create_entities": [
+            "target p1",
+            "target p2"
+        ]
+    },
+    "randomizers": {
+        "random_annoyed": {
+            "echo:comment": 1,
+            "echo:comment_2": 1,
+            "echo:comment_3": 1
+        }
+    },
+    "entity": "npc sirlich:knight",
+    "components": {
+        "minecraft:equipment": {
+            "table": "loot_tables/entities/npc/knight.json"
+        }
+    },
+    "states": [
+        {
+            "name": "p1",
+            "next": "p2",
+            "transitions": {
+                "all": [
+                    "pathfinding p2 0.2",
+                    "interact echo:random_annoyed",
+                    "hit_by_player true echo:angry"
+                ]
+            }
+        },
+        {
+            "name": "p2",
+            "next": "p1",
+            "transitions": {
+                "all": [
+                    "pathfinding p1 0.2",
+                    "interact echo:random_annoyed",
+                    "hit_by_player true echo:angry"
+                ]
+            }
+        },
+        {
+            "name": "comment",
+            "type": "single",
+            "commands": [
+                "!say no",
+                "/say Hey! I'm busy.",
+                "!goto p1"
+            ]
+        },
+        {
+            "name": "comment_2",
+            "type": "single",
+            "commands": [
+                "!say no",
+                "/say Go away.",
+                "!goto p1"
+            ]
+        },
+        {
+            "name": "comment_3",
+            "type": "single",
+            "commands": [
+                "!say no",
+                "/say I don't want to speak with you.",
+                "!goto p1"
+            ]
+        },
+        {
+            "name": "angry",
+            "next": "p1",
+            "commands": [
+                "/say OUCH!",
+                "/say Stop hitting me you idiot!"
+            ],
+            "transitions": [
+                "timer 0",
+                "attack_player_once"
+            ]
+        }
+    ]
+}
